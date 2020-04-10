@@ -77,4 +77,18 @@ main(List<String> args) {
 
   var isFlag = true;
   print('$isFlag ${isFlag.runtimeType}');
+
+  var s1 = 'Hello World';
+  var s2 = "Hello Dart";
+  var s3 = 'Hello\'Flutter';
+  var s4 = "Hello'Flutter";
+  var message1 = '''
+  hhh
+  kkk
+  mmm
+  ''';
+  var name = 'HelloDarter';
+  var age1 = 18;
+  var height1 = 1.88;
+  print('my name is ${name}, age is $age, height is $height1.');
 }
