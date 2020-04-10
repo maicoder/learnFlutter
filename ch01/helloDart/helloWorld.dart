@@ -103,12 +103,32 @@ main(List<String> args) {
   var lettersSet = {'a', 'b', 'c', 'd'};
   print('$lettersSet ${lettersSet.runtimeType}');
 
-  Set<int> numberSet = {1, 2, 3, 4};
-  print('$numberSet ${numberSet.runtimeType}');
+  Set<int> numbersSet = {1, 2, 3, 4};
+  print('$numbersSet ${numbersSet.runtimeType}');
 
   var infoMap1 = {'name': 'Darter', 'age': 18};
   print('$infoMap1 ${infoMap1.runtimeType}');
 
   Map<String, Object> infoMap2 = {'height': 2.20, 'address': 'hz'};
   print('$infoMap2 ${infoMap2.runtimeType}');
+
+  print(letters.length);
+  print(lettersSet.length);
+  print(infoMap1.length);
+
+  numbers.add(5);
+  numbersSet.add(5);
+  print('$numbers $numbersSet');
+
+  numbers.remove(1);
+  numbersSet.remove(1);
+  print('$numbers $numbersSet');
+
+  print(numbers.contains(2));
+  print(numbersSet.contains(2));
+
+  numbers.removeAt(3);
+  print('$numbers');
+
+  
 }
