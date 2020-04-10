@@ -53,6 +53,7 @@ main(List<String> args) {
   print(identical(m,n));
   */
 
+/*
   int age = 18;
   int hexAge = 0x12;
   print(age);
@@ -91,4 +92,23 @@ main(List<String> args) {
   var age1 = 18;
   var height1 = 1.88;
   print('my name is ${name}, age is $age, height is $height1.');
+  */
+
+  var letters = ['a', 'b', 'c', 'd'];
+  print('$letters ${letters.runtimeType}');
+
+  List<int> numbers = [1, 2, 3, 4];
+  print('$numbers ${numbers.runtimeType}');
+
+  var lettersSet = {'a', 'b', 'c', 'd'};
+  print('$lettersSet ${lettersSet.runtimeType}');
+
+  Set<int> numberSet = {1, 2, 3, 4};
+  print('$numberSet ${numberSet.runtimeType}');
+
+  var infoMap1 = {'name': 'Darter', 'age': 18};
+  print('$infoMap1 ${infoMap1.runtimeType}');
+
+  Map<String, Object> infoMap2 = {'height': 2.20, 'address': 'hz'};
+  print('$infoMap2 ${infoMap2.runtimeType}');
 }
