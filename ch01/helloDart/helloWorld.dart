@@ -74,4 +74,7 @@ main(List<String> args) {
   print('${num1Str} ${num1Str.runtimeType}');
   print('${num2Str} ${num2Str.runtimeType}');
   print('${num2StrD} ${num2StrD.runtimeType}');
+
+  var isFlag = true;
+  print('$isFlag ${isFlag.runtimeType}');
 }
