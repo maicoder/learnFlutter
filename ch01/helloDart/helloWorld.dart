@@ -1,7 +1,9 @@
+/*
 String getName() {
   return 'HelloFlutter';
 }
-
+*/
+/*
 main(List<String> args) {
   print('Hello World');
 
@@ -33,4 +35,19 @@ main(List<String> args) {
   // const name = getName();
   final name = getName();
   print(name);
+}
+*/
+
+class Person {
+  const Person();
+}
+
+main(List<String> args) {
+  final a = const Person();
+  final b = const Person();
+  print(identical(a, b));
+
+  final m = Person();
+  final n = Person();
+  print(identical(m,n));
 }
