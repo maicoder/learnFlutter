@@ -94,6 +94,8 @@ main(List<String> args) {
   print('my name is ${name}, age is $age, height is $height1.');
   */
 
+/*
+  // List, Set, Map
   var letters = ['a', 'b', 'c', 'd'];
   print('$letters ${letters.runtimeType}');
 
@@ -137,4 +139,38 @@ main(List<String> args) {
   print('${infoMap1.containsKey('age')} ${infoMap1.containsValue(18)}');
   infoMap1.remove('age');
   print('${infoMap1}');
+  */
+
+  // function
+  var bar = foo;
+  print(bar);
+
+  test(foo);
+
+  var func = getFunc();
+  func('flutter');
+
+  // Closure/lambda
+  var movies = ['a', 'b', 'c', 'd'];
+  printElement(item) {
+    print(item);
+  }
+  movies.forEach(printElement);
+
+  movies.forEach((item) {
+    print(item);
+  });
+  movies.forEach((item) => print(item));
+}
+
+foo(String name) {
+  print('传入的name:$name');
+}
+
+test(Function func) {
+  func('hellodart');
+}
+
+getFunc() {
+  return foo;
 }
