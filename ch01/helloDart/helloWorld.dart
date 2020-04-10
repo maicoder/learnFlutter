@@ -43,6 +43,7 @@ class Person {
 }
 
 main(List<String> args) {
+  /*
   final a = const Person();
   final b = const Person();
   print(identical(a, b));
@@ -50,4 +51,27 @@ main(List<String> args) {
   final m = Person();
   final n = Person();
   print(identical(m,n));
+  */
+
+  int age = 18;
+  int hexAge = 0x12;
+  print(age);
+  print(hexAge);
+
+  double height = 1.88;
+  print(height);
+
+  var one = int.parse('111');
+  var two = double.parse('12.22');
+  print('${one} ${one.runtimeType}');
+  print('${two} ${two.runtimeType}');
+
+  var num1 = 123;
+  var num2 = 123.456;
+  var num1Str = num1.toString();
+  var num2Str = num2.toString();
+  var num2StrD = num2.toStringAsFixed(2);
+  print('${num1Str} ${num1Str.runtimeType}');
+  print('${num2Str} ${num2Str.runtimeType}');
+  print('${num2StrD} ${num2StrD.runtimeType}');
 }
