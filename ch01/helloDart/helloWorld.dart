@@ -9,5 +9,13 @@ main(List<String> args) {
   String content = 'Hello Dart';
   content = 'Hello World';
   // content = 111;
-  
+
+  var aname = 'HelloDarter';
+  aname = 'flutter';
+  print(aname.runtimeType);
+
+  dynamic bname = 'HelloDater';
+  print(bname.runtimeType);
+  bname = 18;
+  print(bname.runtimeType);
 }
