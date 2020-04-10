@@ -130,5 +130,11 @@ main(List<String> args) {
   numbers.removeAt(3);
   print('$numbers');
 
-  
+  print(infoMap1['name']);
+  print('${infoMap1.entries} ${infoMap1.entries.runtimeType}');
+  print('${infoMap1.keys} ${infoMap1.keys.runtimeType}');
+  print('${infoMap1.values} ${infoMap1.values.runtimeType}');
+  print('${infoMap1.containsKey('age')} ${infoMap1.containsValue(18)}');
+  infoMap1.remove('age');
+  print('${infoMap1}');
 }
