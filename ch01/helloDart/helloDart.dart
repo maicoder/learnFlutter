@@ -15,6 +15,7 @@ class Person {
 }
 
 main(List<String> args) {
+  /*
   final p1 = Person();
   p1.name = 'dart';
   p1.run();
@@ -26,4 +27,22 @@ main(List<String> args) {
               ..run()
               ..eat()
               ..swim();
+  */
+
+  var num = 7;
+  print(num / 3);
+  print(num ~/ 3);
+  print(num % 3);
+
+  var name1 = 'dart';
+  print(name1);
+  // var name2 = 'flutter';
+  var name2 = null;
+  name2 ??= 'coder';
+  print(name2);
+
+  // var temp = 'hello';
+  var temp = null;
+  var name = temp ?? 'dart';
+  print(name);
 }
