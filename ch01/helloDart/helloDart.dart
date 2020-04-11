@@ -1,3 +1,4 @@
+/*
 class Person {
   String name;
 
@@ -11,6 +12,23 @@ class Person {
 
   void swim() {
     print("${name} is swimming");
+  }
+}
+*/
+
+class Person {
+  String name;
+  int age;
+
+  // Person(String name, int age) {
+  //   this.name = name;
+  //   this.age = age;
+  // }
+  Person(this.name, this.age);
+
+  @override
+  String toString() {
+    return 'name=$name age=$age';
   }
 }
 
@@ -29,6 +47,7 @@ main(List<String> args) {
               ..swim();
   */
 
+  /*
   var num = 7;
   print(num / 3);
   print(num ~/ 3);
@@ -45,4 +64,7 @@ main(List<String> args) {
   var temp = null;
   var name = temp ?? 'dart';
   print(name);
+  */
+
+
 }
