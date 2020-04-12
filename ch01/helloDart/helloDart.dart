@@ -49,12 +49,27 @@ class Person {
   }
 }
 
+class Person1 {
+  String name;
+  int age;
+
+  Person1(this.name, this.age);
+  Person1.fromName(String name): this(name, 0);
+}
+
 class Point {
   final num x;
   final num y;
   final num distance;
 
-  Point(this.x, this.y) : distance = sqrt(x * x + y * y);
+  // 初始化列表
+  Point(this.x, this.y): distance = sqrt(x * x + y * y);
+
+  @override
+  String toString() {
+    // TODO: implement toString
+    return super.toString();
+  }
 }
 
 main(List<String> args) {
@@ -88,7 +103,7 @@ main(List<String> args) {
   // var temp = 'hello';
   var temp = null;
   var name = temp ?? 'dart';
-  print(name);
+  print(name); 
   */
 
   var p1 = Person();
