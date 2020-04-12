@@ -7,15 +7,19 @@ import 'package:flutter/material.dart';
  */
 main(List<String> args) {
   runApp(
-      Center(
-        child: Text(
-          "Hello World",
-          textDirection: TextDirection.ltr,
-          style: TextStyle(
-            fontSize: 30,
-            color: Colors.orange
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("HelloFlutter"),
+        ),
+        body: Center(
+          child: Text(
+            "Hello World",
+            textDirection: TextDirection.ltr,
+            style: TextStyle(fontSize: 30)
           ),
         ),
-      )
+      ),
+    )
   );
 }
