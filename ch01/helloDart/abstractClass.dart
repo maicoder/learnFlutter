@@ -22,3 +22,23 @@ class Reactangle extends Shape {
     return w * h;
   }
 }
+
+abstract class Runner {
+  run();
+}
+
+abstract class Flyer {
+  fly();
+}
+
+class SuperMan implements Runner, Flyer {
+  @override
+  run() {
+    print('superman is running');
+  }
+
+  @override
+  fly() {
+    print("superman is flying");
+  }
+}
