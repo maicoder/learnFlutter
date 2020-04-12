@@ -49,12 +49,20 @@ class Person {
   }
 }
 
+// 重定向构造函数
 class Person1 {
   String name;
   int age;
 
   Person1(this.name, this.age);
   Person1.fromName(String name): this(name, 0);
+}
+
+// 常量构造函数
+class Person2 {
+  final String name;
+
+  const Person2(this.name);
 }
 
 class Point {
@@ -112,4 +120,9 @@ main(List<String> args) {
   print(p2);
   var p3 = new Person.fromMap({'name': 'flutter', 'age': 20});
   print(p3);
+
+  var p4 = const Person2('dart');
+  var p5 = const Person2('dart');
+
+  print(identical(p4, p5));
 }
