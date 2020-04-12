@@ -80,6 +80,24 @@ class Point {
   }
 }
 
+class Person3 {
+  String name;
+
+  static final Map<String, Person3> _cache = <String, Person3>{};
+
+  factory Person3(String name) {
+    if (_cache.containsKey(name)) {
+      return _cache[name];
+    } else {
+      final p = Person3._internal(name);
+      _cache[name] = p;
+      return p;
+    }
+  }
+
+  Person3._internal(this.name);
+}
+
 main(List<String> args) {
   /*
   final p1 = Person();
@@ -125,4 +143,9 @@ main(List<String> args) {
   var p5 = const Person2('dart');
 
   print(identical(p4, p5));
+
+  var p6 = Person3('flutter');
+  var p7 = Person3('flutter');
+
+  print(identical(p6, p7));
 }
