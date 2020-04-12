@@ -2,6 +2,8 @@ main(List<String> args) {
   var superman = SuperMan();
   superman.run();
   superman.fly();
+
+  print(Colos.red);
 }
 
 mixin Runner {
@@ -18,4 +20,10 @@ mixin Flyer {
 
 class SuperMan with Runner, Flyer {
 
+}
+
+enum Colos {
+  red, 
+  green, 
+  blue
 }
