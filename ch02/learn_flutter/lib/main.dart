@@ -40,6 +40,7 @@ class HomeContent extends StatelessWidget {
   }
 }
 
+/// Widget 中所有属性都是不可变的
 class ProductItem extends StatelessWidget {
   final String title;
   final String desc;
@@ -52,12 +53,15 @@ class ProductItem extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        border: Border.all()
+        border: Border.all(
+          width: 3
+        )
       ),
       child: Column(
         children: <Widget>[
           Text(title, style: TextStyle(fontSize: 24)),
           Text(desc, style: TextStyle(fontSize: 18)),
+          SizedBox(height: 10),
           Image.network(imageURL)
         ],
       ),
