@@ -30,6 +30,8 @@ class ContentWidget extends StatefulWidget {
 }
 
 class ContentWidgetState extends State<ContentWidget> {
+  int _counter = 0;
+
   ContentWidgetState() {
     print("ContentWidgetState 构造函数被调用");
   }
@@ -56,7 +58,19 @@ class ContentWidgetState extends State<ContentWidget> {
   Widget build(BuildContext context) {
     print("ContentWidgetState 的 build 函数被调用");
     return Center(
-      child: Text("Hello World", style: TextStyle(fontSize: 30)),
+      child: Column(
+        children: <Widget>[
+          RaisedButton(
+            onPressed: () {
+              setState(() {
+                _counter++;
+              });
+            },
+            child: Text("计数+1"),
+          ),
+          Text("Hello World: $_counter", style: TextStyle(fontSize: 30)),
+        ],
+      ),
     );
   }
 }
