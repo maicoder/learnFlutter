@@ -20,7 +20,70 @@ class MyApp extends StatelessWidget {
 class ContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RegisterWidget();
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: LoginWidget(),
+    );
+  }
+}
+
+class LoginWidget extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return LoginWidgetState();
+  }
+}
+
+class LoginWidgetState extends State<LoginWidget> {
+  String username;
+  String password;
+
+  GlobalKey<FormState> formGlobalKey = GlobalKey();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: formGlobalKey,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          TextFormField(
+            decoration: InputDecoration(
+              icon: Icon(Icons.people),
+              labelText: "用户名",
+            ),
+            onSaved: (value) {
+              print("执行了 username 的 onsave方法");
+              this.username = value;
+            },
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              icon: Icon(Icons.lock),
+              labelText: "密码",
+            ),
+            onSaved: (value) {
+              print("执行了 passwd 的 onsave方法");
+              this.password = value;
+            },
+          ),
+          SizedBox( height: 12,),
+          Container(
+            width: double.infinity,
+            height: 44,
+            child: RaisedButton(
+              child: Text("注册", style: TextStyle(fontSize: 20, color: Colors.white),),
+              color: Colors.green,
+              onPressed: () {
+                print("注册按钮被点击");
+                formGlobalKey.currentState.save();
+                print("username: $username, passwd: $password");
+              },
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
 
