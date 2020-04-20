@@ -37,6 +37,8 @@ class RegisterWidgetState extends State<RegisterWidget> {
   @override
   void initState() {
     super.initState();
+
+    textEditingController.text = "我是默认值";
     textEditingController.addListener(() {
       print("监听到值的改变 ${textEditingController.text}");
     });
