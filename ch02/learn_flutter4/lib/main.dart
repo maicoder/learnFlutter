@@ -20,6 +20,35 @@ class MyApp extends StatelessWidget {
 class ContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return Center(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Image.network(
+          "https://tva1.sinaimg.cn/large/006y8mN6gy1g7aa03bmfpj3069069mx8.jpg",
+          width: 150,
+          height: 150,
+        ),
+      ),
+    );
+  }
+}
+
+class CircleImageDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ClipOval(
+      child: Image.network(
+        "https://tva1.sinaimg.cn/large/006y8mN6gy1g7aa03bmfpj3069069mx8.jpg",
+        width: 150,
+        height: 150,
+      ),
+    );
+  }
+}
+
+class AssetsImageDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Image.asset("assets/images/14757.jpg");
   }
 }
@@ -27,7 +56,6 @@ class ContentWidget extends StatelessWidget {
 class NetworkImageDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Center(
       child: Container(
         width: 300,
