@@ -20,6 +20,32 @@ class MyApp extends StatelessWidget {
 class ContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return Image.asset("assets/images/14757.jpg");
+  }
+}
+
+class NetworkImageDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: Container(
+        width: 300,
+        height: 300,
+        color: Colors.red,
+        child: Image.network(
+          "http://img0.dili360.com/ga/M01/48/3C/wKgBy1kj49qAMVd7ADKmuZ9jug8377.tub.jpg",
+//          fit: BoxFit.fill,
+          repeat: ImageRepeat.repeatY,
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButtonDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Center(
       child: RaisedButton(
         onPressed: () => print("按钮发生点击"),
@@ -33,7 +59,7 @@ class ContentWidget extends StatelessWidget {
           ],
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8)
+            borderRadius: BorderRadius.circular(8)
         ),
       ),
     );
