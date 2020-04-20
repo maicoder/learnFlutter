@@ -20,6 +20,63 @@ class MyApp extends StatelessWidget {
 class ContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return RegisterWidget();
+  }
+}
+
+class RegisterWidget extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return RegisterWidgetState();
+  }
+}
+
+class RegisterWidgetState extends State<RegisterWidget> {
+  final textEditingController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    textEditingController.addListener(() {
+      print("监听到值的改变 ${textEditingController.text}");
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          TextField(
+            decoration: InputDecoration(
+              icon: Icon(Icons.people),
+              labelText: "username",
+              hintText: "请输入用户名",
+              border: OutlineInputBorder(
+                borderSide: BorderSide(width: 3)
+              ),
+//              filled: true,
+//              fillColor: Colors.purple,
+            ),
+            onChanged: (value) {
+              print("当前的值 $value");
+            },
+            onSubmitted: (value) {
+              print("提交的值 $value");
+            },
+            controller: textEditingController,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class RadiusImageDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Center(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
