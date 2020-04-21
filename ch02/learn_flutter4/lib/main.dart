@@ -56,6 +56,12 @@ class LoginWidgetState extends State<LoginWidget> {
               print("执行了 username 的 onsave方法");
               this.username = value;
             },
+            validator: (value) {
+              if (value == null || value == 0) {
+                return "账号不能为空";
+              }
+              return null;
+            },
           ),
           TextFormField(
             decoration: InputDecoration(
@@ -65,6 +71,12 @@ class LoginWidgetState extends State<LoginWidget> {
             onSaved: (value) {
               print("执行了 passwd 的 onsave方法");
               this.password = value;
+            },
+            validator: (value) {
+              if (value == null || value == 0) {
+                return "密码不能为空";
+              }
+              return null;
             },
           ),
           SizedBox( height: 12,),
@@ -78,6 +90,7 @@ class LoginWidgetState extends State<LoginWidget> {
                 print("注册按钮被点击");
                 formGlobalKey.currentState.save();
                 print("username: $username, passwd: $password");
+                formGlobalKey.currentState.validate();
               },
             ),
           )
