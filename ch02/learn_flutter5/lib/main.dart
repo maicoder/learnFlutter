@@ -27,12 +27,24 @@ class MyHomePage extends StatelessWidget {
 class MyHomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Align(
+    return Center(
       child: Icon(Icons.pets, size: 36, color: Colors.red,),
-      alignment: Alignment.bottomRight,
       widthFactor: 3,
       heightFactor: 3,
     );
   }
 }
+
+/// Align
+//class MyHomeBody extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return Align(
+//      child: Icon(Icons.pets, size: 36, color: Colors.red,),
+//      alignment: Alignment.bottomRight,
+//      widthFactor: 3,
+//      heightFactor: 3,
+//    );
+//  }
+//}
 
