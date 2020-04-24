@@ -29,32 +29,48 @@ class MyHomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: 150,
-        height: 150,
-        child: Icon(Icons.pets, size: 32, color: Colors.white,),
+        width: 200,
+        height: 200,
         decoration: BoxDecoration(
-          color: Colors.amber,
-          border: Border.all(
-            color: Colors.redAccent,
-            width: 3,
-            style: BorderStyle.solid,
-          ),
           borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              offset: Offset(5, 5),
-              color: Colors.blue,
-              blurRadius: 5
-            )
-          ],
-          gradient: LinearGradient(
-              colors: [Colors.green, Colors.red]
-          )
+          image: DecorationImage(image: NetworkImage("https://tva1.sinaimg.cn/large/006y8mN6gy1g7aa03bmfpj3069069mx8.jpg"))
         ),
       ),
     );
   }
 }
+
+//class BoxDecorationDemo extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return Center(
+//      child: Container(
+//        width: 150,
+//        height: 150,
+//        child: Icon(Icons.pets, size: 32, color: Colors.white,),
+//        decoration: BoxDecoration(
+//          color: Colors.amber,
+//          border: Border.all(
+//            color: Colors.redAccent,
+//            width: 3,
+//            style: BorderStyle.solid,
+//          ),
+//          borderRadius: BorderRadius.circular(20),
+//          boxShadow: [
+//            BoxShadow(
+//              offset: Offset(5, 5),
+//              color: Colors.blue,
+//              blurRadius: 5
+//            )
+//          ],
+//          gradient: LinearGradient(
+//              colors: [Colors.green, Colors.red]
+//          )
+//        ),
+//      ),
+//    );
+//  }
+//}
 
 //class ContainerDemo extends StatelessWidget {
 //  @override
