@@ -30,7 +30,7 @@ class MyHomeBody extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisSize: MainAxisSize.max,
+//      mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         Container(color: Colors.red, width: 60, height: 60,),
         Container(color: Colors.blue, width: 80, height: 80,),
