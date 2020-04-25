@@ -27,18 +27,35 @@ class MyHomePage extends StatelessWidget {
 class MyHomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 200,
-        height: 200,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          image: DecorationImage(image: NetworkImage("https://tva1.sinaimg.cn/large/006y8mN6gy1g7aa03bmfpj3069069mx8.jpg"))
-        ),
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      mainAxisSize: MainAxisSize.max,
+      children: <Widget>[
+        Container(color: Colors.red, width: 60, height: 60,),
+        Container(color: Colors.blue, width: 80, height: 80,),
+        Container(color: Colors.green, width: 70, height: 70,),
+        Container(color: Colors.orange, width: 100, height: 100,)
+      ],
     );
   }
 }
+
+//class BorderRadiusDemo extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return Center(
+//      child: Container(
+//        width: 200,
+//        height: 200,
+//        decoration: BoxDecoration(
+//          borderRadius: BorderRadius.circular(20),
+//          image: DecorationImage(image: NetworkImage("https://tva1.sinaimg.cn/large/006y8mN6gy1g7aa03bmfpj3069069mx8.jpg"))
+//        ),
+//      ),
+//    );
+//  }
+//}
 
 //class BoxDecorationDemo extends StatelessWidget {
 //  @override
