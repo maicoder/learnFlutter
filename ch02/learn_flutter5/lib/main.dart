@@ -27,26 +27,51 @@ class MyHomePage extends StatelessWidget {
 class MyHomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
+    return Stack(
       children: <Widget>[
-        Expanded(
-          child: Container(color: Colors.orange, width: 50,),
-          flex: 1,
+        Container(
+          color: Colors.purple,
+          width: 300,
+          height: 300,
         ),
-        Container(color: Colors.red, width: 80, height: 80,),
-        Container(color: Colors.green, width: 70, height: 70,),
-        Container(color: Colors.purple, width: 150, height: 150,),
-        Expanded(
-          child: Container(color: Colors.blue, width: 150, ),
-          flex: 1,
+        Positioned(
+          child: Icon(Icons.favorite, size: 100, color: Colors.white,),
+          left: 20,
+          top: 20,
+        ),
+        Positioned(
+          child: Text("Hello Flutter", style: TextStyle(fontSize: 20, color: Colors.yellow),),
+          bottom: 20,
+          right: 20,
         )
       ],
     );
   }
 }
+
+//class ColumnDemo extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return Column(
+//      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//      crossAxisAlignment: CrossAxisAlignment.center,
+//      mainAxisSize: MainAxisSize.max,
+//      children: <Widget>[
+//        Expanded(
+//          child: Container(color: Colors.orange, width: 50,),
+//          flex: 1,
+//        ),
+//        Container(color: Colors.red, width: 80, height: 80,),
+//        Container(color: Colors.green, width: 70, height: 70,),
+//        Container(color: Colors.purple, width: 150, height: 150,),
+//        Expanded(
+//          child: Container(color: Colors.blue, width: 150, ),
+//          flex: 1,
+//        )
+//      ],
+//    );
+//  }
+//}
 
 //class ExpandedDemo extends StatelessWidget {
 //  @override
