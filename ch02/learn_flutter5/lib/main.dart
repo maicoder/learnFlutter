@@ -27,25 +27,49 @@ class MyHomePage extends StatelessWidget {
 class MyHomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         Expanded(
+          child: Container(color: Colors.orange, width: 50,),
           flex: 1,
-          child: Container(color: Colors.red, height: 60,),
         ),
-        Container(color: Colors.blue, width: 80, height: 80,),
+        Container(color: Colors.red, width: 80, height: 80,),
         Container(color: Colors.green, width: 70, height: 70,),
+        Container(color: Colors.purple, width: 150, height: 150,),
         Expanded(
-          child: Container(color: Colors.orange, height: 100,),
+          child: Container(color: Colors.blue, width: 150, ),
           flex: 1,
         )
       ],
     );
   }
 }
+
+//class ExpandedDemo extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return Row(
+//      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//      crossAxisAlignment: CrossAxisAlignment.end,
+//      mainAxisSize: MainAxisSize.max,
+//      children: <Widget>[
+//        Expanded(
+//          flex: 1,
+//          child: Container(color: Colors.red, height: 60,),
+//        ),
+//        Container(color: Colors.blue, width: 80, height: 80,),
+//        Container(color: Colors.green, width: 70, height: 70,),
+//        Expanded(
+//          child: Container(color: Colors.orange, height: 100,),
+//          flex: 1,
+//        )
+//      ],
+//    );
+//  }
+//}
 
 //class RowDemo extends StatelessWidget {
 //  @override
