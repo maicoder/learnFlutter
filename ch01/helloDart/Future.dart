@@ -7,6 +7,8 @@ main(List<String> args) {
   var future = getNetworkData();
   future.then((value) {
     print(value);
+  }).catchError((err) {
+    print(err);
   });
   print(future);
 
@@ -16,7 +18,8 @@ main(List<String> args) {
 Future<String> getNetworkData() {
   return Future<String>(() {
     sleep(Duration(seconds: 3));
-    return "network data";
+    // return "network data";
+    throw Exception("network error...");
   });
 }
 
