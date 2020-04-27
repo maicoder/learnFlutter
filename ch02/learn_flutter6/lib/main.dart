@@ -17,21 +17,31 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Hello"),),
-      body: MyHomeBody(),
+      body: MySeparatedDemo(),
     );
   }
 }
 
-class MyHomeBody extends StatelessWidget {
+class MySeparatedDemo extends StatelessWidget {
+  Divider blueColor = Divider(color: Colors.blue);
+  Divider redColor = Divider(color: Colors.red);
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: null,
-        itemExtent: 80,
+    return ListView.separated(
         itemBuilder: (BuildContext context, int index) {
-          return ListTile(title: Text("标题$index"), subtitle: Text("详情内容$index"));
-        }
+          return ListTile(
+            leading: Icon(Icons.people),
+            title: Text("联系人${index+1}"),
+            subtitle: Text("联系人电话${index+1}"),
+          );
+        },
+        separatorBuilder: (BuildContext context, int index) {
+          return index % 2 == 0 ? redColor : blueColor;
+        },
+        itemCount: 100
     );
   }
 }
+
 
