@@ -2,7 +2,8 @@ import 'dart:io';
 
 main(List<String> args) {
   print("main function start");
-  // print(getNetworkData());
+  
+  print(getNetworkData());
 
   // var future = getNetworkData();
   // future.then((value) {
@@ -24,20 +25,19 @@ main(List<String> args) {
   //   print(error);
   // });
 
-  Future.delayed(Duration(seconds: 3), () {
-    return "3秒后信息";
-  }).then((value) {
-    print(value);
-  });
+  // Future.delayed(Duration(seconds: 3), () {
+  //   return "3秒后信息";
+  // }).then((value) {
+  //   print(value);
+  // });
 
   print("main function end");
 }
 
-Future<String> getNetworkData() {
-  return Future<String>(() {
-    sleep(Duration(seconds: 3));
-    return "network data1";
-    // throw Exception("network error...");
+Future<String> getNetworkData() async {
+  var result = await Future.delayed(Duration(seconds: 3), () {
+    return "network data";
   });
+  return "请求到的数据：" + result;
 }
 
