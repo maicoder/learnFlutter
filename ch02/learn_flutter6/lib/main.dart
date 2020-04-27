@@ -17,35 +17,39 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Hello"),),
-      body: MyGridExtentDemo(),
+      body: HomeContent(),
     );
   }
 }
 
-class MyGridExtentDemo extends StatelessWidget {
-
-  List<Widget> getGridWidgets() {
-    return List.generate(100, (index) {
-      return Container(
-        color: Colors.purple,
-        alignment: Alignment(0, 0),
-        child: Text("item$index", style: TextStyle(fontSize: 20, color: Colors.white)),
-      );
-    });
-  }
-
+class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GridView(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: 150,
-          mainAxisSpacing: 10,
-          crossAxisSpacing: 10,
-          childAspectRatio: 1.0
-      ),
-      children: getGridWidgets(),
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverSafeArea(
+          sliver: SliverPadding(
+            padding: EdgeInsets.all(8),
+            sliver: SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                      (BuildContext context, int index) {
+                    return Container(
+                      alignment: Alignment(0, 0),
+                      color: Colors.orange,
+                      child: Text("item$index"),
+                    );
+                  },
+                  childCount: 20
+              ),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
-
-
