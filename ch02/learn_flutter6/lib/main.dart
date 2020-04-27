@@ -23,24 +23,14 @@ class MyHomePage extends StatelessWidget {
 }
 
 class MyHomeBody extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      itemExtent: 200,
-      children: <Widget>[
-        Container(color: Colors.red, width: 200),
-        Container(color: Colors.green, width: 200),
-        Container(color: Colors.blue, width: 200),
-        Container(color: Colors.purple, width: 200),
-        Container(color: Colors.orange, width: 200),
-        Container(color: Colors.red, width: 200),
-        Container(color: Colors.green, width: 200),
-        Container(color: Colors.blue, width: 200),
-        Container(color: Colors.purple, width: 200),
-        Container(color: Colors.orange, width: 200),
-      ],
+    return ListView.builder(
+        itemCount: null,
+        itemExtent: 80,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(title: Text("标题$index"), subtitle: Text("详情内容$index"));
+        }
     );
   }
 }
