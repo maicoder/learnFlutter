@@ -17,31 +17,34 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Hello"),),
-      body: MySeparatedDemo(),
+      body: MyGridCountDemo(),
     );
   }
 }
 
-class MySeparatedDemo extends StatelessWidget {
-  Divider blueColor = Divider(color: Colors.blue);
-  Divider redColor = Divider(color: Colors.red);
+class MyGridCountDemo extends StatelessWidget {
+
+  List<Widget> getGridWidgets() {
+    return List.generate(100, (index) {
+      return Container(
+        color: Colors.green,
+        alignment: Alignment(0, 0),
+        child: Text("item$index", style: TextStyle(fontSize: 20, color: Colors.white)),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            leading: Icon(Icons.people),
-            title: Text("联系人${index+1}"),
-            subtitle: Text("联系人电话${index+1}"),
-          );
-        },
-        separatorBuilder: (BuildContext context, int index) {
-          return index % 2 == 0 ? redColor : blueColor;
-        },
-        itemCount: 100
+    return GridView(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+          childAspectRatio: 1.0
+      ),
+      children: getGridWidgets(),
     );
   }
 }
-
 
