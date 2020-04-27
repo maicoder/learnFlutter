@@ -20,8 +20,14 @@ main(List<String> args) {
   //   print(value);
   // });
 
-  Future.error(Exception("errormessage")).catchError((error) {
-    print(error);
+  // Future.error(Exception("errormessage")).catchError((error) {
+  //   print(error);
+  // });
+
+  Future.delayed(Duration(seconds: 3), () {
+    return "3秒后信息";
+  }).then((value) {
+    print(value);
   });
 
   print("main function end");
