@@ -4,17 +4,21 @@ main(List<String> args) {
   print("main function start");
   // print(getNetworkData());
 
-  var future = getNetworkData();
-  future.then((value) {
-    print(value);
-    return "content data2";
-  }).then((value) {
-    print(value);
-    return "message data3";
-  }).then((value) {
+  // var future = getNetworkData();
+  // future.then((value) {
+  //   print(value);
+  //   return "content data2";
+  // }).then((value) {
+  //   print(value);
+  //   return "message data3";
+  // }).then((value) {
+  //   print(value);
+  // });
+  // print(future);
+
+  Future.value("hahaha").then((value) {
     print(value);
   });
-  print(future);
 
   print("main function end");
 }
