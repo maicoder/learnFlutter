@@ -16,8 +16,12 @@ main(List<String> args) {
   // });
   // print(future);
 
-  Future.value("hahaha").then((value) {
-    print(value);
+  // Future.value("hahaha").then((value) {
+  //   print(value);
+  // });
+
+  Future.error(Exception("errormessage")).catchError((error) {
+    print(error);
   });
 
   print("main function end");
