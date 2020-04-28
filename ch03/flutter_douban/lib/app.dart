@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
 class MyStackPage extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
+  _MyStackPageState createState() {
     return _MyStackPageState();
   }
 }
